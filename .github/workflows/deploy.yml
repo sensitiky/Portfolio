@@ -28,9 +28,8 @@ jobs:
 
       - name: Copy static assets to build directory
         run: |
-          mkdir -p out/_next
-          cp -r public/* out/
-          cp -r .next/static out/_next/
+          mkdir -p out
+          cp -r public/. out/
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
