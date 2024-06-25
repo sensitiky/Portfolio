@@ -20,16 +20,17 @@ jobs:
         with:
           node-version: '18'
 
-      - name: Install dependencies
-        run: npm install
-
-      - name: Build Next.js app
-        run: npm run build
+      - name: Build and export Next.js app
+        run: |
+          npm install
+          npm run build
+          npm run export
 
       - name: Copy static assets to build directory
         run: |
-          mkdir -p out
-          cp -r public/. out/
+          mkdir -p out/_next
+          cp -r public/* out/
+          cp -r .next/static out/_next/
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
