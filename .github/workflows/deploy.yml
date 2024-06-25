@@ -18,7 +18,7 @@ jobs:
       - name: Install Node.js and dependencies
         uses: actions/setup-node@v2
         with:
-          node-version: '14'
+          node-version: 'current'
 
       - name: Build and export Next.js app
         run: |
