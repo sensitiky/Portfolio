@@ -15,7 +15,7 @@ import { JSX, SVGProps, useState } from "react";
 import Image from "next/image";
 import { Sheet, SheetTrigger, SheetContent } from "@/components/ui/sheet";
 
-const main: React.FC = () => {
+const Main: React.FC = () => {
   const [name, setName] = useState<string>("");
   const [email, setEmail] = useState<string>("");
   const [message, setMessage] = useState<string>("");
@@ -138,10 +138,10 @@ const main: React.FC = () => {
           <div className="container grid md:grid-cols-2 gap-8 items-center">
             <div className="space-y-4">
               <h1 className="text-4xl font-bold tracking-tight">
-                I'm Mario Corea
+                Im Mario Corea
               </h1>
               <p className="text-muted-foreground text-lg">
-                I'm a developer with a passion for creating 
+                Im a developer with a passion for creating 
                 <br/>innovative and user-friendly web applications.
               </p>
               <div className="flex gap-4">
@@ -364,7 +364,7 @@ const main: React.FC = () => {
     </div>
   );
 };
-export default main;
+export default Main;
 function CodeIcon(props: JSX.IntrinsicAttributes & SVGProps<SVGSVGElement>) {
   return (
     <svg
