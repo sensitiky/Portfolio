@@ -1,6 +1,15 @@
 /** @type {import('next').NextConfig} */
+import withNextIntl from 'next-intl/plugin';
+
+const isProduction = process.env.NODE_ENV === 'production';
+
 const nextConfig = {
-    output: 'export',
+  reactStrictMode: true,
+  images: {
+    domains: ['sensitiky.github.io'],
+  },
 };
 
-export default nextConfig;
+const finalConfig = withNextIntl()(nextConfig);
+
+export default isProduction ? finalConfig : nextConfig;
