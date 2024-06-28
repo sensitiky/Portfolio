@@ -106,34 +106,49 @@ const Main: React.FC = () => {
             </Link>
           </nav>
           <Sheet>
-        <SheetTrigger asChild>
-          <Button variant="ghost" size="icon" className="md:hidden">
-            <MenuIcon className="w-6 h-6" />
-            <span className="sr-only">Toggle navigation menu</span>
-          </Button>
-          </SheetTrigger>
-          <SheetContent side="left">
-          <div className="grid gap-4 p-6">
-            <Link href="#about" className="text-lg font-medium hover:underline" prefetch={false}>
-              About Me
-            </Link>
-            <Link href="#skills" className="text-lg font-medium hover:underline" prefetch={false}>
-              Skills
-            </Link>
-            <Link href="#projects" className="text-lg font-medium hover:underline" prefetch={false}>
-              Projects
-            </Link>
-            <Link href="#contact" className="text-lg font-medium hover:underline" prefetch={false}>
-              Contact
-            </Link>
-            <Link href="/formulario">
-            </Link>
-          </div>
-        </SheetContent>
-      </Sheet>
+            <SheetTrigger asChild>
+              <Button variant="ghost" size="icon" className="md:hidden">
+                <MenuIcon className="w-6 h-6" />
+                <span className="sr-only">Toggle navigation menu</span>
+              </Button>
+            </SheetTrigger>
+            <SheetContent side="left">
+              <div className="grid gap-4 p-6">
+                <Link
+                  href="#about"
+                  className="text-lg font-medium hover:underline"
+                  prefetch={false}
+                >
+                  About Me
+                </Link>
+                <Link
+                  href="#skills"
+                  className="text-lg font-medium hover:underline"
+                  prefetch={false}
+                >
+                  Skills
+                </Link>
+                <Link
+                  href="#projects"
+                  className="text-lg font-medium hover:underline"
+                  prefetch={false}
+                >
+                  Projects
+                </Link>
+                <Link
+                  href="#contact"
+                  className="text-lg font-medium hover:underline"
+                  prefetch={false}
+                >
+                  Contact
+                </Link>
+                <Link href="/formulario"></Link>
+              </div>
+            </SheetContent>
+          </Sheet>
         </div>
       </header>
-      <main className="flex-1 overflow-hidden">        
+      <main className="flex-1 overflow-hidden">
         <section id="about" className="py-12 md:py-16 lg:py-20">
           <div className="container grid md:grid-cols-2 gap-8 items-center">
             <div className="space-y-4">
@@ -141,8 +156,9 @@ const Main: React.FC = () => {
                 Im Mario Corea
               </h1>
               <p className="text-muted-foreground text-lg">
-                Im a developer with a passion for creating 
-                <br/>innovative and user-friendly web applications.
+                Im a developer with a passion for creating
+                <br />
+                innovative and user-friendly web applications.
               </p>
               <div className="flex gap-4">
                 <Link
@@ -170,15 +186,14 @@ const Main: React.FC = () => {
             />
           </div>
         </section>
-        
+
         <section id="skills" className="py-12 md:py-16 lg:py-20 bg-muted">
           <div className="container">
             <div className="space-y-4 text-center">
-              <h2 className="text-3xl font-bold tracking-tight">
-                My Stack
-              </h2>
+              <h2 className="text-3xl font-bold tracking-tight">My Stack</h2>
               <p className="text-muted-foreground text-lg">
-                I have experience in several programming languages and technologies.
+                I have experience in several programming languages and
+                technologies.
               </p>
             </div>
             <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mt-8">
@@ -236,7 +251,7 @@ const Main: React.FC = () => {
                 </CardHeader>
                 <CardContent>
                   <Image
-                    src="/placeholder.svg"
+                    src="/Project1.png"
                     width={400}
                     height={300}
                     alt="Project 1"
@@ -245,7 +260,7 @@ const Main: React.FC = () => {
                 </CardContent>
                 <CardFooter>
                   <Link
-                    href="https://github.com/sensitiky/IESA-WEB"
+                    href="https://iesa-web.vercel.app/"
                     className="inline-flex items-center justify-center rounded-md bg-primary px-4 py-2 text-sm font-medium text-primary-foreground shadow transition-colors hover:bg-primary/90 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring"
                     prefetch={false}
                   >
@@ -255,14 +270,15 @@ const Main: React.FC = () => {
               </Card>
               <Card>
                 <CardHeader>
-                  <CardTitle>Project 2</CardTitle>
+                  <CardTitle>Dynamic Web Service for File Handling</CardTitle>
                   <CardDescription>
-                    A desktop application built with C++ and Qt.
+                    A full-stack web application enabling CSV file uploads and
+                    dynamic data search, built with React, Node.js, and SQLite.
                   </CardDescription>
                 </CardHeader>
                 <CardContent>
                   <Image
-                    src="/placeholder.svg"
+                    src="/Project2.png"
                     width={400}
                     height={300}
                     alt="Project 2"
@@ -271,7 +287,7 @@ const Main: React.FC = () => {
                 </CardContent>
                 <CardFooter>
                   <Link
-                    href="#"
+                    href="https://full-stack-take-home-test-ashen.vercel.app/"
                     className="inline-flex items-center justify-center rounded-md bg-primary px-4 py-2 text-sm font-medium text-primary-foreground shadow transition-colors hover:bg-primary/90 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring"
                     prefetch={false}
                   >
@@ -314,7 +330,8 @@ const Main: React.FC = () => {
             <div className="space-y-4 text-center">
               <h2 className="text-3xl font-bold tracking-tight">Contact Me</h2>
               <p className="text-muted-foreground text-lg">
-                Feel free to reach out if you have any questions or just want to connect.
+                Feel free to reach out if you have any questions or just want to
+                connect.
               </p>
             </div>
             <form
@@ -344,10 +361,7 @@ const Main: React.FC = () => {
                 className="w-full"
                 required
               />
-              <Button
-                type="submit"
-                className="w-full"
-              >
+              <Button type="submit" className="w-full">
                 Send
               </Button>
             </form>
@@ -357,7 +371,7 @@ const Main: React.FC = () => {
       <footer className="py-4 border-t">
         <div className="container text-center">
           <p className="text-sm text-muted-foreground">
-            © 2024 Mario Corea. All rights reserved.
+            © 2024 Mario Corea.
           </p>
         </div>
       </footer>
