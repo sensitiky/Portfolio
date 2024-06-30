@@ -178,7 +178,7 @@ const Main: React.FC = () => {
               </div>
             </div>
             <Image
-              src="/mario.jpg"
+              src="/yo.jpg"
               width={500}
               height={500}
               alt="Mario Correa"
