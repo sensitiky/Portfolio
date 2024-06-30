@@ -73,7 +73,7 @@ const Main: React.FC = () => {
             prefetch={false}
           >
             <CodeIcon className="w-6 h-6" />
-            <span>Mario Corea</span>
+            <span>Mario Correa</span>
           </Link>
           <nav className="hidden md:flex items-center gap-4">
             <Link
@@ -153,12 +153,12 @@ const Main: React.FC = () => {
           <div className="container grid md:grid-cols-2 gap-8 items-center">
             <div className="space-y-4">
               <h1 className="text-4xl font-bold tracking-tight">
-                Im Mario Corea
+                Hi, Im Mario Correa
               </h1>
               <p className="text-muted-foreground text-lg">
-                Im a developer with a passion for creating
-                <br />
-                innovative and user-friendly web applications.
+                A developer passionate about creating innovative and easy-to-use
+                web applications, automated resources and solutions to everyday
+                problems.
               </p>
               <div className="flex gap-4">
                 <Link
@@ -181,7 +181,7 @@ const Main: React.FC = () => {
               src="/mario.jpg"
               width={500}
               height={500}
-              alt="Mario Corea"
+              alt="Mario Correa"
               className="mx-auto rounded-lg shadow-lg"
             />
           </div>
@@ -246,7 +246,7 @@ const Main: React.FC = () => {
                 <CardHeader>
                   <CardTitle>IESA Web</CardTitle>
                   <CardDescription>
-                    A web application built with React, Node.js, and MongoDB.
+                    A web application built with Next.js on TypeScript.
                   </CardDescription>
                 </CardHeader>
                 <CardContent>
@@ -273,7 +273,8 @@ const Main: React.FC = () => {
                   <CardTitle>Dynamic Web Service for File Handling</CardTitle>
                   <CardDescription>
                     A full-stack web application enabling CSV file uploads and
-                    dynamic data search, built with React, Node.js, and SQLite.
+                    dynamic data search, built with React, Node.js, and
+                    SQLite.(Needs to open backend first)
                   </CardDescription>
                 </CardHeader>
                 <CardContent>
@@ -291,11 +292,20 @@ const Main: React.FC = () => {
                     className="inline-flex items-center justify-center rounded-md bg-primary px-4 py-2 text-sm font-medium text-primary-foreground shadow transition-colors hover:bg-primary/90 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring"
                     prefetch={false}
                   >
-                    View Project
+                    Front-End
+                  </Link>
+                </CardFooter>
+                <CardFooter>
+                  <Link
+                    href="https://full-stack-take-home-test-o2re.onrender.com"
+                    className="inline-flex items-center justify-center rounded-md bg-primary px-4 py-2 text-sm font-medium text-primary-foreground shadow transition-colors hover:bg-primary/90 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring"
+                    prefetch={false}
+                  >
+                    <h2>Back-End</h2>
                   </Link>
                 </CardFooter>
               </Card>
-              <Card>
+              <Card className="hidden">
                 <CardHeader>
                   <CardTitle>Project 3</CardTitle>
                   <CardDescription>
@@ -370,9 +380,7 @@ const Main: React.FC = () => {
       </main>
       <footer className="py-4 border-t">
         <div className="container text-center">
-          <p className="text-sm text-muted-foreground">
-            © 2024 Mario Corea.
-          </p>
+          <p className="text-sm text-muted-foreground">© 2024 Mario Correa.</p>
         </div>
       </footer>
     </div>
