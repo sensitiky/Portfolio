@@ -1,0 +1,390 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  overflow: hidden;
+}
+
+.desktop {
+  background: url("public/img21.jpg") no-repeat center center fixed;
+  background-size: cover;
+  width: 100vw;
+  height: 100vh;
+  position: relative;
+}
+
+.icons {
+  display: flex;
+  flex-wrap: wrap;
+  position: absolute;
+  top: 20px;
+  left: 20px;
+}
+
+.icon {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 10px;
+  cursor: pointer;
+  animation: fadeIn 1s ease-in-out;
+}
+
+.icon img {
+  width: 64px;
+  height: 64px;
+}
+
+.icon span {
+  margin-top: 5px;
+  color: white;
+  text-shadow: 1px 1px 2px black;
+}
+
+.taskbar {
+  position: absolute;
+  bottom: 0;
+  width: 99%;
+  height: 60px;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 10px;
+  box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.3);
+  animation: fadeIn 2s ease-in-out;
+}
+
+.start-menu-button {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.start-menu-button img {
+  width: 40px;
+  height: 40px;
+  animation: fadeIn 2s ease-in-out;
+}
+
+.taskbar-icons {
+  display: flex;
+  align-items: center;
+}
+
+.taskbar-icons img {
+  width: 40px;
+  height: 40px;
+  margin: 0 5px;
+  animation: fadeIn 2s ease-in-out;
+}
+
+.system-tray {
+  display: flex;
+  align-items: center;
+}
+
+.system-tray img {
+  filter: invert();
+  width: 20px;
+  height: 20px;
+  margin: 0 5px;
+  animation: fadeIn 2s ease-in-out;
+}
+
+.time {
+  color: white;
+  margin-left: 10px;
+  font-size: 14px;
+  text-shadow: 1px 1px 2px black;
+}
+
+.start-menu {
+  position: absolute;
+  bottom: 70px;
+  left: 50%;
+  transform: translateX(-50%) translateY(20px);
+  width: 600px; /* Increased width for a more spacious layout */
+  height: 700px; /* Increased height for a more spacious layout */
+  background: rgba(255, 255, 255, 0.8); /* Semi-transparent white background */
+  backdrop-filter: blur(10px); /* Glass-like blur effect */
+  border-radius: 20px; /* More rounded corners */
+  color: black;
+  padding: 20px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Softer shadow */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease-in-out;
+}
+
+.start-menu.show {
+  opacity: 1;
+  visibility: visible;
+  transform: translateX(-50%) translateY(0);
+}
+
+/* Additional styling for inner elements to match Windows 11 */
+.start-menu .header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 10px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.start-menu .search-bar {
+  width: 100%;
+  padding: 10px;
+  margin: 20px 0;
+  border-radius: 10px;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  background: rgba(255, 255, 255, 0.6);
+}
+
+.start-menu .app-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 15px;
+}
+
+.start-menu .app-icon {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.6);
+  transition: background 0.2s;
+}
+
+.start-menu .app-icon:hover {
+  background: rgba(255, 255, 255, 0.8);
+}
+
+.search-bar input {
+  width: 100%;
+  padding: 10px;
+  border-radius: 5px;
+  border: none;
+  outline: none;
+  margin-bottom: 20px;
+}
+
+.pinned-apps {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.app {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 10px;
+}
+
+.app img {
+  width: 48px;
+  height: 48px;
+}
+
+.app span {
+  margin-top: 5px;
+}
+
+.recommended {
+  margin-top: 20px;
+}
+
+.recommended h3 {
+  margin: 0;
+  margin-bottom: 10px;
+}
+
+.user-section {
+  display: flex;
+  align-items: center;
+}
+
+.user-section img {
+  width: 32px;
+  height: 32px;
+  margin-right: 10px;
+}
+
+.power-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.power-button img {
+  width: 32px;
+  height: 32px;
+  animation: fadeIn 2s ease-in-out;
+}
+
+/* Modal Styles */
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.modal.show {
+  opacity: 1;
+  visibility: visible;
+}
+
+.modal-content {
+  width: 80%;
+  max-width: 800px;
+  background-color: #1e1e1e;
+  border-radius: 10px;
+  overflow: hidden;
+  color: white;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  animation: slideDown 0.5s ease-in-out, fadeIn 0.5s ease-in-out;
+}
+
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  background-color: #2e2e2e;
+  border-bottom: 1px solid #444;
+}
+
+.modal-header .close-btn,
+.modal-header .close-chrome-btn {
+  font-size: 24px;
+  cursor: pointer;
+}
+
+.modal-body {
+  padding: 20px;
+}
+
+.modal-body iframe {
+  width: 100%;
+  height: 500px;
+  border: none;
+}
+
+.gallery {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.gallery-item {
+  width: 48%;
+}
+
+.gallery-item img {
+  width: 100%;
+  border-radius: 10px;
+}
+
+.buttons {
+  display: flex;
+  justify-content: space-between;
+}
+
+.add-photo-btn,
+.add-folder-btn {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  background-color: #0078d7;
+  color: white;
+}
+
+.add-photo-btn:hover,
+.add-folder-btn:hover {
+  background-color: #005ea6;
+}
+
+.hidden {
+  display: none;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideDown {
+  from {
+    transform: translateY(-20px);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideUp {
+  from {
+    transform: translateY(20px);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .start-menu {
+    width: 90%;
+    height: auto;
+    bottom: 70px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .taskbar {
+    height: 60px;
+  }
+
+  .taskbar-icons img,
+  .system-tray img,
+  .start-menu-button img {
+    width: 24px;
+    height: 24px;
+  }
+
+  .time {
+    font-size: 12px;
+  }
+
+  .icon img {
+    width: 48px;
+    height: 48px;
+  }
+
+  .app img {
+    width: 40px;
+    height: 40px;
+  }
+}

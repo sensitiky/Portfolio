@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Windows Desktop Portfolio</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="desktop">
+      <div class="icons">
+        <div class="icon" id="projects-icon">
+          <img src="public/folder-svgrepo-com.svg" alt="Folder Icon" />
+          <span>Projects</span>
+        </div>
+        <div class="icon">
+          <img src="public/folder-svgrepo-com.svg" alt="Folder Icon" />
+          <span>Resume</span>
+        </div>
+        <div class="icon">
+          <img src="public/folder-svgrepo-com.svg" alt="Folder Icon" />
+          <span>Contact</span>
+        </div>
+      </div>
+      <div class="taskbar">
+        <div class="start-menu-button">
+          <img
+            src="public/windows-applications-svgrepo-com.svg"
+            alt="Windows Icon"
+          />
+        </div>
+        <div class="taskbar-icons">
+          <img src="public/vscode-svgrepo-com.svg" alt="VS Code Icon" />
+          <img
+            src="public/chrome-svgrepo-com.svg"
+            alt="Browser Icon"
+            id="chrome-icon"
+          />
+          <img src="public/folder-svgrepo-com.svg" alt="File Explorer Icon" />
+        </div>
+        <div class="system-tray">
+          <img src="public/wifi-svgrepo-com.svg" alt="WiFi Icon" />
+          <img src="public/sound-svgrepo-com.svg" alt="Sound Icon" />
+          <img src="public/battery-bolt-svgrepo-com.svg" alt="Battery Icon" />
+          <span class="time">2:21 AM</span>
+        </div>
+      </div>
+      <div class="start-menu">
+        <div class="search-bar">
+          <input
+            type="text"
+            placeholder="Search for apps, settings, and documents"
+          />
+        </div>
+        <div class="pinned-apps">
+          <div class="app">
+            <img src="public/chrome-svgrepo-com.svg" alt="Google Chrome" />
+            <span>Google Chrome</span>
+          </div>
+          <div class="app">
+            <img src="public/folder-svgrepo-com.svg" alt="File Explorer" />
+            <span>File Explorer</span>
+          </div>
+        </div>
+        <div class="recommended">
+          <h3>Recommended</h3>
+          <p>
+            The more you use your device, the more we'll show your recent files
+            and new apps here.
+          </p>
+        </div>
+        <div class="user-section">
+          <img src="public/user-rounded-svgrepo-com.svg" alt="User Icon" />
+          <span>Mario Correa</span>
+        </div>
+        <div class="power-button">
+          <img src="public/power-svgrepo-com.svg" alt="Power Icon" />
+        </div>
+      </div>
+
+      <!-- Modal for Projects Folder -->
+      <div id="projects-modal" class="modal hidden">
+        <div class="modal-content">
+          <div class="modal-header">
+            <span class="close-btn">&times;</span>
+            <h2>Projects</h2>
+          </div>
+          <div class="modal-body">
+            <p>Gallery is a place to view your photos in File Explorer</p>
+            <div class="gallery">
+              <div class="gallery-item">
+                <img src="public/image1.jpg" alt="Gallery Image" />
+              </div>
+              <div class="gallery-item">
+                <img src="public/image2.jpg" alt="Gallery Image" />
+              </div>
+            </div>
+            <div class="buttons">
+              <button class="add-photo-btn">Add phone photos</button>
+              <button class="add-folder-btn">Add a folder</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Modal for Chrome Browser -->
+      <div id="chrome-modal" class="modal hidden">
+        <div class="modal-content">
+          <div class="modal-header">
+            <span class="close-chrome-btn">&times;</span>
+            <h2>Google Chrome</h2>
+          </div>
+          <div class="modal-body">
+            <iframe src="https://www.linkedin.com/in/mario-correa-45324b237/" frameborder="0"></iframe>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
