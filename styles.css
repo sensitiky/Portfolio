@@ -484,8 +484,10 @@ body {
   }
 
   .desktop {
-    width: 100%;
+    width: 103%;
     height: 100%;
+    overflow: hidden;
+    max-width: 100%;
   }
 
   .start-menu {
@@ -503,6 +505,7 @@ body {
     justify-content: space-between;
     align-items: center;
     padding: 0 10px;
+    width: 96%;
   }
 
   .taskbar-icons img,
