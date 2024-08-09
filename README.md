@@ -1,6 +1,6 @@
-# Mario Correa Portfolio
+# Mario Correa 
 
-## Build
+## Portfolio
 
 ### HTML CSS JavaScript
 
