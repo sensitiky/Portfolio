@@ -3,23 +3,23 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Windows Desktop Portfolio</title>
+    <title>Mario Correa | Portfolio</title>
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
     <div class="desktop">
       <div class="icons">
         <div class="icon" id="projects-icon">
-          <img src="public/folder-svgrepo-com.svg" alt="Folder Icon" />
+          <img src="public/folder-svgrepo-com.svg" alt="Projects Icon" />
           <span>Projects</span>
         </div>
-        <div class="icon">
-          <img src="public/folder-svgrepo-com.svg" alt="Folder Icon" />
+        <div class="icon" id="resume-icon">
+          <img src="public/folder-svgrepo-com.svg" alt="Resume Icon" />
           <span>Resume</span>
         </div>
-        <div class="icon">
-          <img src="public/folder-svgrepo-com.svg" alt="Folder Icon" />
-          <span>Contact</span>
+        <div class="icon" id="tech-icon">
+          <img src="public/folder-svgrepo-com.svg" alt="Stack Icon" />
+          <span>Stack</span>
         </div>
       </div>
       <div class="taskbar">
@@ -78,12 +78,47 @@
         </div>
       </div>
 
+      <!-- Modal for Tech Stack -->
+      <div id="tech-modal" class="win11-folder hidden">
+        <div class="win11-folder-header">
+          <span class="win11-folder-title">Tech Stack</span>
+          <span class="win11-folder-close-btn">&times;</span>
+        </div>
+        <div class="win11-folder-content">
+          <!-- Add your content here -->
+          <img src="public/html-5-svgrepo-com.svg" alt="HTML5 Logo" />
+          <img src="public/css-svgrepo-com.svg" alt="CSS3 Logo" />
+          <img src="public/javascript-svgrepo-com.svg" alt="JavaScript Logo" />
+          <img src="public/react-svgrepo-com.svg" alt="React Logo" />
+          <img src="public/nodejs-1-logo-svgrepo-com.svg" alt="Node.js Logo" />
+          <img src="public/python-svgrepo-com.svg" alt="Python Logo" />
+          <img src="public/kotlin-svgrepo-com.svg" alt="Kotlin Logo" />
+          <img
+            src="public//typescript-icon-svgrepo-com.svg"
+            alt="TypeScript Logo"
+          />
+          <img src="public/github-142-svgrepo-com.svg" alt="GitHub Logo" />
+          <img
+            src="public/google-cloud-svgrepo-com.svg"
+            alt="Google Cloud Logo"
+          />
+          <img src="public/docker-svgrepo-com.svg" alt="Docker Logo" />
+          <img src="public/aws-svgrepo-com.svg" alt="AWS Logo" />
+          <img src="public/nestjs-svgrepo-com.svg" alt="NestJS Logo" />
+          <img src="public/nextjs-svgrepo-com.svg" alt="Next.js Logo" />
+          <img src="public/sql-svgrepo-com.svg" alt="SQL Logo" />
+          <img src="public/mongo-svgrepo-com.svg" alt="MongoDB Logo" />
+          <img src="public/mysql-logo-svgrepo-com.svg" alt="MySQL Logo" />
+          <img src="public/tailwind-svgrepo-com.svg" alt="Tailwind CSS Logo" />
+        </div>
+      </div>
+
       <!-- Modal for Projects Folder -->
       <div id="projects-modal" class="modal hidden">
         <div class="modal-content">
           <div class="modal-header">
-            <span class="close-btn">&times;</span>
             <h2>Projects</h2>
+            <span class="close-btn">&times;</span>
           </div>
           <div class="modal-body">
             <p>Gallery is a place to view your photos in File Explorer</p>
@@ -103,15 +138,117 @@
         </div>
       </div>
 
+      <!-- Modal for Resume -->
+      <div id="resume-modal" class="modal hidden">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h2>Resume</h2>
+            <span class="close-btn close-resume-btn">&times;</span>
+          </div>
+          <div class="modal-body">
+            <iframe src="public/CV-Correa Mario.pdf" frameborder="0"></iframe>
+          </div>
+        </div>
+      </div>
+
       <!-- Modal for Chrome Browser -->
       <div id="chrome-modal" class="modal hidden">
         <div class="modal-content">
           <div class="modal-header">
-            <span class="close-chrome-btn">&times;</span>
             <h2>Google Chrome</h2>
+            <span class="close-chrome-btn">&times;</span>
           </div>
           <div class="modal-body">
-            <iframe src="https://www.linkedin.com/in/mario-correa-45324b237/" frameborder="0"></iframe>
+            <iframe src="public/CV-Correa Mario.pdf" frameborder="0"></iframe>
+          </div>
+        </div>
+      </div>
+
+      <!-- System Tray Modal -->
+      <div id="system-tray-modal" class="win11-system-tray hidden">
+        <div class="win11-system-tray-content">
+          <div class="win11-system-tray-body">
+            <div class="win11-system-tray-controls">
+              <div class="win11-system-tray-grid">
+                <div class="control-item">
+                  <img src="public/wifi-exclamation-svgrepo-com.svg" alt="WiFi" />
+                  <span>Wi-Fi</span>
+                </div>
+                <div class="control-item">
+                  <img src="public/bluetooth-on-svgrepo-com.svg" alt="Bluetooth" />
+                  <span>Bluetooth</span>
+                </div>
+                <div class="control-item">
+                  <img
+                    src="public/airplane-svgrepo-com.svg"
+                    alt="Airplane Mode"
+                  />
+                  <span>Airplane Mode</span>
+                </div>
+                <div class="control-item">
+                  <img
+                    src="public/battery-saver-svgrepo-com.svg"
+                    alt="Battery Saver"
+                  />
+                  <span>Battery Saver</span>
+                </div>
+                <div class="control-item">
+                  <img
+                    src="public/night-light-svgrepo-com.svg"
+                    alt="Night Light"
+                  />
+                  <span>Night Light</span>
+                </div>
+                <div class="control-item">
+                  <img
+                    src="public/accessibility-svgrepo-com.svg"
+                    alt="Accessibility"
+                  />
+                  <span>Accessibility</span>
+                </div>
+              </div>
+              <div class="gap-2">++++ <br/>+++</div>
+              <div class="win11-system-tray-sliders">
+                <div class="slider-container">
+                  <input
+                    type="range"
+                    min="0"
+                    max="100"
+                    value="50"
+                    class="slider"
+                  />
+                  <span>Brightness</span>
+                </div>
+                <div class="slider-container">
+                  <input
+                    type="range"
+                    min="0"
+                    max="100"
+                    value="50"
+                    class="slider"
+                  />
+                  <span>Volume</span>
+                </div>
+              </div>
+              <div class="win11-system-tray-footer">
+                <div class="battery-info">
+                  <img
+                    src="public/battery-bolt-svgrepo-com.svg"
+                    alt="Battery Icon"
+                  />
+                  <span>100%</span>
+                </div>
+                <div class="win11-system-tray-actions">
+                  <img src="public/pencil-svgrepo-com.svg" alt="Edit Icon" />
+                  <span class="gap">+++</span>
+                  <img
+                  id="settings-icon"
+                    src="public/settings-svgrepo-com.svg"
+                    alt="Settings Icon"
+                  />
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
