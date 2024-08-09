@@ -30,7 +30,7 @@
           />
         </div>
         <div class="taskbar-icons">
-          <img src="public/vscode-svgrepo-com.svg" alt="VS Code Icon" />
+          <img id="vs-code-icon" src="public/vscode-svgrepo-com.svg" alt="VS Code Icon" />
           <img src="public/folder-svgrepo-com.svg" alt="File Explorer Icon" />
         </div>
         <div class="system-tray">
@@ -49,7 +49,11 @@
         </div>
         <div class="pinned-apps">
           <div class="app">
-            <img src="public/vscode-svgrepo-com.svg" alt="Visual Studio Code" />
+            <img
+              id="vs-code-icon-2"
+              src="public/vscode-svgrepo-com.svg"
+              alt="Visual Studio Code"
+            />
             <span>VSCode</span>
           </div>
           <div class="app">
@@ -146,6 +150,21 @@
         </div>
       </div>
 
+      <!-- Modal for VS Code -->
+      <div id="vs-code-modal" class="modal">
+        <div class="vs-modal-content">
+          <div class="modal-header">
+            <h2>Mario Code</h2>
+            <span class="close-btn">&times;</span>
+          </div>
+          <iframe
+            src="/assets/editor.html"
+            frameborder="0"
+            style="width: 100%; height: 100%"
+          ></iframe>
+        </div>
+      </div>
+
       <!-- System Tray Modal -->
       <div id="system-tray-modal" class="win11-system-tray hidden">
         <div class="win11-system-tray-content">
@@ -153,11 +172,17 @@
             <div class="win11-system-tray-controls">
               <div class="win11-system-tray-grid">
                 <div class="control-item">
-                  <img src="public/wifi-exclamation-svgrepo-com.svg" alt="WiFi" />
+                  <img
+                    src="public/wifi-exclamation-svgrepo-com.svg"
+                    alt="WiFi"
+                  />
                   <span>Wi-Fi</span>
                 </div>
                 <div class="control-item">
-                  <img src="public/bluetooth-on-svgrepo-com.svg" alt="Bluetooth" />
+                  <img
+                    src="public/bluetooth-on-svgrepo-com.svg"
+                    alt="Bluetooth"
+                  />
                   <span>Bluetooth</span>
                 </div>
                 <div class="control-item">
@@ -189,7 +214,7 @@
                   <span>Accessibility</span>
                 </div>
               </div>
-              <div class="gap-2">++++ <br/>+++</div>
+              <div class="gap-2">++++ <br />+++</div>
               <div class="win11-system-tray-sliders">
                 <div class="slider-container">
                   <input
@@ -224,7 +249,7 @@
                   <img src="public/pencil-svgrepo-com.svg" alt="Edit Icon" />
                   <span class="gap">+++</span>
                   <img
-                  id="settings-icon"
+                    id="settings-icon"
                     src="public/settings-svgrepo-com.svg"
                     alt="Settings Icon"
                   />

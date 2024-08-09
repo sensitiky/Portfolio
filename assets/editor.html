@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Text Editor</title>
+    <link rel="stylesheet" href="estilos.css" />
+  </head>
+  <body>
+    <div class="editor-container">
+      <div class="sidebar">
+        <ul class="file-list">
+          <li data-file="index.html">index.html</li>
+          <li data-file="styles.css">styles.css</li>
+          <li data-file="app.js">app.js</li>
+          <button id="mode-toggle">
+            <img src="/public/light-mode-svgrepo-com.svg" />
+          </button>
+        </ul>
+      </div>
+      <div class="editor">
+        <div class="tab-bar"></div>
+        <textarea class="code-editor" spellcheck="false"></textarea>
+      </div>
+    </div>
+    <script src="app.js"></script>
+  </body>
+</html>

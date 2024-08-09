@@ -3,30 +3,44 @@ document.addEventListener("DOMContentLoaded", function () {
   const startMenu = document.querySelector(".start-menu");
   const projectsIcon = document.getElementById("projects-icon");
   const projectsModal = document.getElementById("projects-modal");
-  const closeBtn = document.querySelector(".close-btn");
+  const closeProjectsBtn = projectsModal.querySelector(".close-btn");
   const chromeIcon = document.getElementById("chrome-icon");
   const chromeModal = document.getElementById("chrome-modal");
-  const closeChromeBtn = document.querySelector(".close-chrome-btn");
   const powerButton = document.querySelector(".power-button");
   const resumeIcon = document.getElementById("resume-icon");
   const resumeModal = document.getElementById("resume-modal");
-  const closeResumeBtn = document.querySelector(".close-resume-btn");
+  const closeResumeBtn = resumeModal.querySelector(".close-resume-btn");
   const techIcon = document.getElementById("tech-icon");
   const techModal = document.getElementById("tech-modal");
-  const closeTechBtn = document.querySelector(".win11-folder-close-btn");
+  const closeTechBtn = techModal.querySelector(".win11-folder-close-btn");
   const systemTray = document.querySelector(".system-tray");
   const systemTrayModal = document.getElementById("system-tray-modal");
+  const vscodeIcon = document.getElementById("vs-code-icon");
+  const vsCodeIcon2 = document.getElementById("vs-code-icon-2");
+  const vscodeModal = document.getElementById("vs-code-modal");
+  const closeVsCodeBtn = vscodeModal.querySelector(".close-btn");
 
-  // Function to toggle the System Tray modal
-  function toggleSystemTrayModal() {
-    systemTrayModal.classList.toggle("hidden");
-    systemTrayModal.classList.toggle("show");
+  // Function to toggle the visibility of a modal
+  function toggleModal(modal) {
+    modal.classList.toggle("hidden");
+    modal.classList.toggle("show");
   }
-  // Event listener for System Tray click
-  if (systemTray && systemTrayModal) {
-    systemTray.addEventListener("click", () => {
-      toggleSystemTrayModal();
-    });
+
+  // Function to close the Projects modal
+  function closeProjectsModal() {
+    projectsModal.classList.add("hidden");
+    projectsModal.classList.remove("show");
+  }
+  function closeTechmodal() {
+    techModal.classList.add("hidden");
+    techModal.classList.remove("show");
+  }
+  // Function to close the Resume modal
+  function closeResumeModal() {
+    if (resumeModal) {
+      resumeModal.classList.add("hidden");
+      resumeModal.classList.remove("show");
+    }
   }
   // Function to make a modal draggable
   function makeDraggable(modal, header) {
@@ -56,149 +70,90 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   }
 
-  // Make each modal draggable
+  // Apply draggable functionality to each modal
   if (projectsModal) {
     makeDraggable(projectsModal, projectsModal.querySelector(".modal-header"));
   }
-
   if (chromeModal) {
     makeDraggable(chromeModal, chromeModal.querySelector(".modal-header"));
   }
-
   if (resumeModal) {
     makeDraggable(resumeModal, resumeModal.querySelector(".modal-header"));
   }
-
   if (techModal) {
     makeDraggable(techModal, techModal.querySelector(".win11-folder-header"));
   }
-
-  // Function to toggle the Tech Stack modal
-  function toggleTechModal() {
-    techModal.classList.toggle("hidden");
-    techModal.classList.toggle("show");
+  if (vscodeModal) {
+    makeDraggable(vscodeModal, vscodeModal.querySelector(".modal-header"));
   }
 
-  // Event listeners for Tech Stack modal
+  // Event listeners for toggling modals
+  if (vscodeIcon && vscodeModal) {
+    vsCodeIcon2.addEventListener(
+      "click",
+      () => toggleModal(vscodeModal) & closeStartMenu()
+    );
+    vscodeIcon.addEventListener("click", () => toggleModal(vscodeModal));
+    closeVsCodeBtn.addEventListener("click", () => toggleModal(vscodeModal));
+  }
+
   if (techIcon && techModal) {
-    techIcon.addEventListener("click", () => {
-      toggleTechModal();
-    });
-
-    if (closeTechBtn) {
-      closeTechBtn.addEventListener("click", () => {
-        toggleTechModal();
-      });
-    }
+    techIcon.addEventListener("click", () => toggleModal(techModal));
+    closeTechBtn.addEventListener("click", () => toggleModal(techModal));
   }
 
-  // Function to toggle the Resume modal
-  function toggleResumeModal() {
-    resumeModal.classList.toggle("hidden");
-    resumeModal.classList.toggle("show");
-  }
-
-  // Event listeners for Resume modal
   if (resumeIcon && resumeModal) {
-    resumeIcon.addEventListener("click", () => {
-      toggleResumeModal();
-    });
+    resumeIcon.addEventListener("click", () => toggleModal(resumeModal));
+    closeResumeBtn.addEventListener("click", () => toggleModal(resumeModal));
+  }
 
-    if (closeResumeBtn) {
-      closeResumeBtn.addEventListener("click", () => {
-        toggleResumeModal();
-      });
-    }
+  if (projectsIcon && projectsModal && closeProjectsBtn) {
+    projectsIcon.addEventListener("click", () => toggleModal(projectsModal));
+    closeProjectsBtn.addEventListener("click", () =>
+      toggleModal(projectsModal)
+    );
+  }
+
+  if (chromeIcon && chromeModal && closeChromeBtn) {
+    chromeIcon.addEventListener("click", () => toggleModal(chromeModal));
+    closeChromeBtn.addEventListener("click", () => toggleModal(chromeModal));
+  }
+
+  // Event listener for System Tray
+  if (systemTray && systemTrayModal) {
+    systemTray.addEventListener("click", () => toggleModal(systemTrayModal));
   }
 
   // Function to toggle the Start Menu
   function toggleStartMenu() {
-    if (startMenu) startMenu.classList.toggle("show");
+    if (startMenu) {
+      startMenu.classList.toggle("show");
+    }
   }
 
   // Event listener for Start Menu button
   if (startMenuButton && startMenu) {
-    startMenuButton.addEventListener("click", () => {
-      toggleStartMenu();
-    });
+    startMenuButton.addEventListener("click", () => toggleStartMenu());
   }
 
-  // Function to toggle the Projects modal
-  function toggleProjectsModal() {
-    if (projectsModal) {
-      projectsModal.classList.toggle("hidden");
-      projectsModal.classList.toggle("show");
-    }
-  }
-
-  // Event listeners for Projects modal
-  if (projectsIcon && projectsModal && closeBtn) {
-    projectsIcon.addEventListener("click", () => {
-      toggleProjectsModal();
-    });
-
-    closeBtn.addEventListener("click", () => {
-      toggleProjectsModal();
-    });
-  }
-
-  // Function to toggle the Chrome modal
-  function toggleChromeModal() {
-    if (chromeModal) {
-      chromeModal.classList.toggle("hidden");
-      chromeModal.classList.toggle("show");
-    }
-  }
-
-  // Event listeners for Chrome modal
-  if (chromeIcon && chromeModal && closeChromeBtn) {
-    chromeIcon.addEventListener("click", () => {
-      toggleChromeModal();
-    });
-
-    closeChromeBtn.addEventListener("click", () => {
-      toggleChromeModal();
-    });
-  }
-
-  // Function to close the Chrome modal
-  function closeChromeModal() {
-    chromeModal.classList.add("hidden");
-    chromeModal.classList.remove("show");
-  }
-
-  // Function to close the Projects modal
-  function closeProjectsModal() {
-    projectsModal.classList.add("hidden");
-    projectsModal.classList.remove("show");
-  }
-
-  //Function to close the Start menu
+  // Function to close the Start Menu
   function closeStartMenu() {
-    startMenu.classList.remove("show");
-  }
-
-  // Function to close the Resume modal
-  function closeResumeModal() {
-    if (resumeModal) {
-      resumeModal.classList.add("hidden");
-      resumeModal.classList.remove("show");
+    if (startMenu) {
+      startMenu.classList.remove("show");
     }
   }
 
-  // Event listener for the Power Button to close Chrome modal
+  // Event listener for Power Button
   if (powerButton) {
-    powerButton.addEventListener("click", () => {
-      closeChromeModal();
-    });
+    powerButton.addEventListener("click", () => closeChromeModal());
   }
 
-  // Close all modals and start menu on Escape key press
+  // Close all modals and Start Menu on Escape key press
   document.addEventListener("keydown", (event) => {
     if (event.key === "Escape") {
       closeStartMenu();
       closeProjectsModal();
-      closeChromeModal();
+      closeTechmodal();
       closeResumeModal();
       event.preventDefault();
     } else if (
@@ -210,7 +165,7 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   });
 
-  // Close modals and start menu if clicked outside
+  // Close modals and Start Menu if clicked outside
   document.addEventListener("click", (event) => {
     if (
       startMenu &&
@@ -223,7 +178,7 @@ document.addEventListener("DOMContentLoaded", function () {
       projectsModal &&
       !projectsModal.contains(event.target) &&
       !projectsIcon.contains(event.target) &&
-      !closeBtn.contains(event.target)
+      !closeProjectsBtn.contains(event.target)
     ) {
       closeProjectsModal();
     }
@@ -243,10 +198,14 @@ document.addEventListener("DOMContentLoaded", function () {
     ) {
       closeResumeModal();
     }
-  });
-
-  // Close the System Tray modal when clicking outside
-  document.addEventListener("click", (event) => {
+    if (
+      techModal &&
+      !techModal.contains(event.target) &&
+      !techIcon.contains(event.target) &&
+      !closeTechBtn.contains(event.target)
+    ) {
+      closeTechmodal();
+    }
     if (
       systemTrayModal &&
       !systemTrayModal.contains(event.target) &&
